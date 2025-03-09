@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://hhdix1qe6t6g"]
+
+[ext_resource type="Texture2D" uid="uid://b0xlkxt8a465g" path="res://assets/Chopping Board/Knife.png" id="1_30ru1"]
+
+[resource]
+albedo_texture = ExtResource("1_30ru1")
