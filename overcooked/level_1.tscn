@@ -130,7 +130,7 @@ albedo_color = Color(1, 1, 0.713726, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5484, -0.0978316, -5.30336)
 
 [node name="plane" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(6.70519, 0, 0, 0, 10.004, 0, 0, 0, 4.56227, 8.08622, 0.0262909, 3.9767)
+transform = Transform3D(6.70519, 0, 0, 0, 10.004, 0, 0, 0, 4.56227, 8.086, 0, 3.977)
 mesh = SubResource("PlaneMesh_6oc46")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_xbsph")
