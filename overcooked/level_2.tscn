@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cuhlnga3dunwr"]
+[gd_scene load_steps=53 format=3 uid="uid://cuhlnga3dunwr"]
 
 [ext_resource type="ArrayMesh" uid="uid://w4gvdmmc8jqr" path="res://assets/Washing Station/WashingStation.obj" id="1_1s3ah"]
 [ext_resource type="PackedScene" uid="uid://b11s6757soju4" path="res://assets/Basic_Cabinet/Basic_Cabinet.FBX" id="2_i0iie"]
@@ -11,30 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://kgysxifort0b" path="res://assets/Cooker/Cooker.FBX" id="9_fh4b6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cyc4k"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uaa1k"]
-albedo_color = Color(1, 0.211765, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ehfr"]
-albedo_color = Color(1, 0.211765, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6vkm"]
-albedo_color = Color(1, 0.211765, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7p0r"]
-albedo_color = Color(1, 0.211765, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bc7f"]
-albedo_color = Color(1, 0.211765, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgna7"]
-albedo_color = Color(1, 0.211765, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5of8l"]
-albedo_color = Color(1, 0.211765, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6hwh"]
-albedo_color = Color(1, 0.211765, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpyit"]
 albedo_color = Color(1, 0.211765, 1, 1)
@@ -160,173 +136,15 @@ albedo_color = Color(0.286275, 0.466667, 1, 1)
 
 [node name="kitchen" type="Node3D" parent="."]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.07769, -9.086, 0.5, 0)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D32" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 8.72, 0.5, -1)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_uaa1k")
-
-[node name="MeshInstance3D33" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D34" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72, 0.5, 0.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_0ehfr")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.078, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.061, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.06776, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.07146, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_p6vkm")
-
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09659, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D16" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.10669, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_d7p0r")
-
-[node name="MeshInstance3D17" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11703, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.09202, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10239, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_3bc7f")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09987, 0.5, -2.49952)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.11567, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_pgna7")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12194, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.122, 0.5, -1.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.122, 0.5, -0.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D18" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72, 0.5, -0.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D27" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D28" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D29" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D30" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_5of8l")
-
-[node name="MeshInstance3D31" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.72, 0.5, -2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_e6hwh")
-
-[node name="MeshInstance3D19" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72, 0.5, 0.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D20" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72, 0.5, 1.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D21" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
 [node name="foodbox1" type="MeshInstance3D" parent="kitchen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72, 0.5, 2.5)
 mesh = SubResource("BoxMesh_cyc4k")
 surface_material_override/0 = SubResource("StandardMaterial3D_fpyit")
 
-[node name="MeshInstance3D23" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
 [node name="foodbox2" type="MeshInstance3D" parent="kitchen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72, 0.5, 2.5)
 mesh = SubResource("BoxMesh_cyc4k")
 surface_material_override/0 = SubResource("StandardMaterial3D_o8yl1")
-
-[node name="MeshInstance3D25" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.72, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
-
-[node name="MeshInstance3D26" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.72, 0.5, 2.5)
-visible = false
-mesh = SubResource("BoxMesh_cyc4k")
 
 [node name="environment" type="Node3D" parent="."]
 

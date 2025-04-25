@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bkbouji3joqbf"]
+
+[node name="Level3" type="Node3D"]
+
+[node name="kitchen" type="Node3D" parent="."]
+
+[node name="environment" type="Node3D" parent="."]
+
+[node name="assets" type="Node3D" parent="."]
+
+[node name="background_obj" type="Node3D" parent="."]
