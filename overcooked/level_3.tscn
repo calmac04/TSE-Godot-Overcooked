@@ -1,11 +1,295 @@
-[gd_scene format=3 uid="uid://bkbouji3joqbf"]
+[gd_scene load_steps=18 format=3 uid="uid://bkbouji3joqbf"]
+
+[ext_resource type="PackedScene" uid="uid://bdeasj0j5vesx" path="res://assets/Basic_Cabinet/Basic_Cabinet_No_Handle.FBX" id="1_tejug"]
+[ext_resource type="PackedScene" uid="uid://hgbiibmfaj5n" path="res://assets/CompleteStation/FoodConveyor.FBX" id="2_8pupg"]
+[ext_resource type="PackedScene" uid="uid://od4i1wy6veqb" path="res://assets/PlateWarmer/Basic_Cabinet_PlateWarmer.FBX" id="3_vyou3"]
+[ext_resource type="PackedScene" uid="uid://cc1lbrh2m4ni4" path="res://assets/Extinguisher/FireExtinguisher.FBX" id="4_dck32"]
+[ext_resource type="PackedScene" uid="uid://kgysxifort0b" path="res://assets/Cooker/Cooker.FBX" id="5_hl20c"]
+[ext_resource type="PackedScene" uid="uid://dn5y2htfu5th6" path="res://assets/CookPot/CookPot.FBX" id="6_3mu8v"]
+[ext_resource type="PackedScene" uid="uid://ca5563wdlguk" path="res://assets/CuttingBoard/CuttingBoard.FBX" id="7_203we"]
+[ext_resource type="PackedScene" uid="uid://1dnmvkngydkk" path="res://assets/Bin/Bin.FBX" id="8_b4hyr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fjuma"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykrrs"]
+albedo_color = Color(0.886275, 0.25098, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akgy0"]
+albedo_color = Color(0.886275, 0.25098, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6mk8"]
+albedo_color = Color(0.886275, 0.25098, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ygjxm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ve36n"]
+albedo_color = Color(0.964706, 0.623529, 0.301961, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmlpl"]
+albedo_color = Color(0.0823529, 0.286275, 0.329412, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gin00"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw76d"]
+albedo_color = Color(1, 0.47451, 0.301961, 1)
 
 [node name="Level3" type="Node3D"]
 
 [node name="kitchen" type="Node3D" parent="."]
 
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 3)
+mesh = SubResource("BoxMesh_fjuma")
+skeleton = NodePath("../../environment")
+surface_material_override/0 = SubResource("StandardMaterial3D_ykrrs")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 3)
+mesh = SubResource("BoxMesh_fjuma")
+skeleton = NodePath("../../environment")
+surface_material_override/0 = SubResource("StandardMaterial3D_akgy0")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 3)
+mesh = SubResource("BoxMesh_fjuma")
+skeleton = NodePath("../../environment")
+surface_material_override/0 = SubResource("StandardMaterial3D_j6mk8")
+
 [node name="environment" type="Node3D" parent="."]
+
+[node name="floor" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(10.5, 0, 0, 0, 1, 0, 0, 0, 6, 0.2, 0, 0.7)
+mesh = SubResource("PlaneMesh_ygjxm")
+surface_material_override/0 = SubResource("StandardMaterial3D_ve36n")
+
+[node name="floor2" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(10.5, 0, 0, 0, 1, 0, 0, 0, 3, 0.2, 0, -8.25)
+mesh = SubResource("PlaneMesh_ygjxm")
+surface_material_override/0 = SubResource("StandardMaterial3D_xmlpl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(0.50064, 0, 0, 0, 1.00128, 0, 0, 0, 9.51215, -8.5, 0.5, 0)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(0.50064, 0, 0, 0, 1.00128, 0, 0, 0, 9.51215, 9, 0.5, 0)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(18, 0, 0, 0, 1.001, 0, 0, 0, 0.5, 0.25, 0.5, 5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 0.5, -7.25, 0.5, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 0.5, 7.75, 0.5, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, -4.25, 0.5, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, -5.25, 0.125, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, -5.25, 0.875, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, -3.25, 0.125, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, -3.25, 0.875, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, -1.25, 0.125, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, -1.25, 0.875, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.25, 0.125, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.25, 0.875, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 1.75, 0.125, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 1.75, 0.875, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 3.75, 0.125, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 3.75, 0.875, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 5.75, 0.125, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 5.75, 0.875, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, -2.25, 0.5, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 2.75, 0.5, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 4.75, 0.5, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -0.5, 0.5, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 1, 0.5, -5)
+mesh = SubResource("BoxMesh_gin00")
+surface_material_override/0 = SubResource("StandardMaterial3D_sw76d")
 
 [node name="assets" type="Node3D" parent="."]
 
+[node name="Basic_Cabinet_No_Handle" parent="assets" instance=ExtResource("1_tejug")]
+
+[node name="Basic_Cabinet_No_Handle14" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Basic_Cabinet_No_Handle15" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Basic_Cabinet_No_Handle16" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Basic_Cabinet_No_Handle17" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="Basic_Cabinet_No_Handle18" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -3)
+
+[node name="Basic_Cabinet_No_Handle19" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="Basic_Cabinet_No_Handle2" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Basic_Cabinet_No_Handle3" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Basic_Cabinet_No_Handle4" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Basic_Cabinet_No_Handle5" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="Basic_Cabinet_No_Handle6" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="Basic_Cabinet_No_Handle7" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="Basic_Cabinet_No_Handle8" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+
+[node name="Basic_Cabinet_No_Handle9" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
+
+[node name="Basic_Cabinet_No_Handle10" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
+
+[node name="Basic_Cabinet_No_Handle11" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="Basic_Cabinet_No_Handle12" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
+
+[node name="Basic_Cabinet_No_Handle13" parent="assets" instance=ExtResource("1_tejug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -2)
+
+[node name="FoodConveyor" parent="assets" instance=ExtResource("2_8pupg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -3)
+
+[node name="Basic_Cabinet_PlateWarmer" parent="assets" instance=ExtResource("3_vyou3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+
+[node name="FireExtinguisher" parent="assets" instance=ExtResource("4_dck32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -3)
+
+[node name="Cooker" parent="assets" instance=ExtResource("5_hl20c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+
+[node name="Cooker2" parent="assets" instance=ExtResource("5_hl20c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="CookPot" parent="assets" instance=ExtResource("6_3mu8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -3)
+
+[node name="CookPot2" parent="assets" instance=ExtResource("6_3mu8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -3)
+
+[node name="CuttingBoard" parent="assets" instance=ExtResource("7_203we")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 3)
+
+[node name="CuttingBoard2" parent="assets" instance=ExtResource("7_203we")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 3)
+
+[node name="Bin" parent="assets" instance=ExtResource("8_b4hyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2)
+
 [node name="background_obj" type="Node3D" parent="."]
+
+[node name="barrel" type="Node3D" parent="background_obj"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="background_obj/barrel"]
+
+[node name="cannon-ammo" type="Node3D" parent="background_obj"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="background_obj/cannon-ammo"]
+
+[node name="rope?" type="Node3D" parent="background_obj"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="background_obj/rope?"]
