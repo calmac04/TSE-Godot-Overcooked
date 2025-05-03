@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3c0q80l6cwqm"]
+[gd_scene load_steps=6 format=3 uid="uid://d3c0q80l6cwqm"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_c6gwx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qqb4h"]
 
@@ -24,3 +26,11 @@ transform = Transform3D(1, 0, 0, 0, -0.0538523, 0.998549, 0, -0.998549, -0.05385
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_oq5n0")
+
+[node name="ProtoController" parent="." instance=ExtResource("1_c6gwx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544333, 3.4491, 0.84986)
+input_left = "ui_left"
+input_right = "ui_right"
+input_forward = "ui_up"
+input_back = "ui_down"
+input_jump = "ui_accept"
