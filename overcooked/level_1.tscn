@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=44 format=3 uid="uid://dg1k20ycvuled"]
+=======
+[gd_scene load_steps=45 format=3 uid="uid://dg1k20ycvuled"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=45 format=3 uid="uid://dg1k20ycvuled"]
 >>>>>>> Stashed changes
@@ -15,7 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://bdeasj0j5vesx" path="res://assets/Basic_Cabinet/Basic_Cabinet_No_Handle.FBX" id="9_idr4s"]
 [ext_resource type="PackedScene" uid="uid://b11s6757soju4" path="res://assets/Basic_Cabinet/Basic_Cabinet.FBX" id="10_3mud0"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://bqyb1ch1jcxn2" path="res://CharacterController/Scenes/Players.tscn" id="11_1pe0h"]
+=======
+[ext_resource type="PackedScene" uid="uid://de7nhnwm6ep1f" path="res://Scenes/Player1.tscn" id="11_1pe0h"]
+[ext_resource type="Script" uid="uid://cohgv7rfqtda" path="res://Scripts/camera.gd" id="12_27bay"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="PackedScene" uid="uid://de7nhnwm6ep1f" path="res://Scenes/Player1.tscn" id="11_1pe0h"]
 [ext_resource type="Script" uid="uid://cohgv7rfqtda" path="res://Scripts/camera.gd" id="12_27bay"]
@@ -1101,9 +1110,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.410
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.4107, -0.08, -3.2287)
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Node3D" parent="." instance=ExtResource("11_1pe0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.89125, 0, -3.31923)
 =======
+=======
+>>>>>>> Stashed changes
 [node name="Player 1" parent="." instance=ExtResource("11_1pe0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.73858, 0, -3.38619)
 speed = -3.0
@@ -1114,4 +1126,7 @@ script = ExtResource("12_27bay")
 target_path = NodePath("../Player 1")
 target_path2 = NodePath("../Player 1")
 follow_offset = Vector3(0, 3, -2.5)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

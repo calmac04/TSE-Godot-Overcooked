@@ -13,8 +13,13 @@ config_version=5
 config/name="Overcooked"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 run/main_scene="res://node_3d.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+=======
+run/main_scene="uid://dg1k20ycvuled"
+config/features=PackedStringArray("4.4", "Forward Plus")
+>>>>>>> Stashed changes
 =======
 run/main_scene="uid://dg1k20ycvuled"
 config/features=PackedStringArray("4.4", "Forward Plus")
