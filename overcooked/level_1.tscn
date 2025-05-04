@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=44 format=3 uid="uid://dg1k20ycvuled"]
+=======
+[gd_scene load_steps=45 format=3 uid="uid://dg1k20ycvuled"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://1dnmvkngydkk" path="res://assets/Bin/Bin.FBX" id="1_d2ufs"]
 [ext_resource type="PackedScene" uid="uid://cc1lbrh2m4ni4" path="res://assets/Extinguisher/FireExtinguisher.FBX" id="2_x55ub"]
@@ -10,7 +14,12 @@
 [ext_resource type="ArrayMesh" uid="uid://w4gvdmmc8jqr" path="res://assets/Washing Station/WashingStation.obj" id="8_y07nj"]
 [ext_resource type="PackedScene" uid="uid://bdeasj0j5vesx" path="res://assets/Basic_Cabinet/Basic_Cabinet_No_Handle.FBX" id="9_idr4s"]
 [ext_resource type="PackedScene" uid="uid://b11s6757soju4" path="res://assets/Basic_Cabinet/Basic_Cabinet.FBX" id="10_3mud0"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://bqyb1ch1jcxn2" path="res://CharacterController/Scenes/Players.tscn" id="11_1pe0h"]
+=======
+[ext_resource type="PackedScene" uid="uid://de7nhnwm6ep1f" path="res://Scenes/Player1.tscn" id="11_1pe0h"]
+[ext_resource type="Script" uid="uid://cohgv7rfqtda" path="res://Scripts/camera.gd" id="12_27bay"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1pe0h"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -1091,5 +1100,18 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.410
 [node name="cabinet28" parent="assets" instance=ExtResource("10_3mud0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.4107, -0.08, -3.2287)
 
+<<<<<<< Updated upstream
 [node name="Node3D" parent="." instance=ExtResource("11_1pe0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.89125, 0, -3.31923)
+=======
+[node name="Player 1" parent="." instance=ExtResource("11_1pe0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.73858, 0, -3.38619)
+speed = -3.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 6.70677e-08, -5.60773e-08, 0, 0.64145, 0.767165, 8.74228e-08, 0.767165, -0.64145, -3.35747, 4.30955, -7.1116)
+script = ExtResource("12_27bay")
+target_path = NodePath("../Player 1")
+target_path2 = NodePath("../Player 1")
+follow_offset = Vector3(0, 3, -2.5)
+>>>>>>> Stashed changes

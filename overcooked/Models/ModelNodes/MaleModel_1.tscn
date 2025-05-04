@@ -1,0 +1,116 @@
+[gd_scene load_steps=19 format=3 uid="uid://cn2hm0hwo8y3y"]
+
+[ext_resource type="PackedScene" uid="uid://bqu4egdotjaig" path="res://Models/GLB format/character-male-f.glb" id="1_q80ld"]
+[ext_resource type="ArrayMesh" uid="uid://djnfta7vkkdnd" path="res://EVERYTHING/Meshes/Head_02.mesh" id="2_iq0so"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7iv6w"]
+transparency = 1
+albedo_color = Color(0.608633, 0.597258, 0.608368, 1)
+normal_enabled = true
+normal_scale = -0.81
+distance_fade_mode = 1
+distance_fade_max_distance = 0.2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7k5wa"]
+
+[sub_resource type="Gradient" id="Gradient_f28po"]
+colors = PackedColorArray(0, 0, 0, 1, 0.20871, 0.20871, 0.20871, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r1v58"]
+gradient = SubResource("Gradient_f28po")
+
+[sub_resource type="Gradient" id="Gradient_jqk4x"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7k5wa"]
+gradient = SubResource("Gradient_jqk4x")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_up6ii"]
+lifetime_randomness = 0.1
+emission_shape_scale = Vector3(0.95, 1.995, 0.475)
+emission_shape = 2
+emission_sphere_radius = 0.2
+spread = 47.383
+gravity = Vector3(0, 0, -2)
+scale_min = 0.0
+scale_max = 0.04
+color = Color(0.352263, 0.342969, 0.328774, 1)
+color_ramp = SubResource("GradientTexture1D_7k5wa")
+color_initial_ramp = SubResource("GradientTexture1D_r1v58")
+alpha_curve = SubResource("CurveTexture_7k5wa")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.23
+
+[sub_resource type="SphereMesh" id="SphereMesh_ocmwp"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_bcbcq"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_2dftf"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_eu7l1"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bcbcq"]
+animation = &"holding-both"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_js7pq"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eu7l1"]
+animation = &"sprint"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p1v5b"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_iq0so"]
+nodes/Dash/node = SubResource("AnimationNodeBlend2_bcbcq")
+nodes/Dash/position = Vector2(560, -40)
+nodes/Move/node = SubResource("AnimationNodeBlend2_2dftf")
+nodes/Move/position = Vector2(60, -40)
+nodes/MoveHold/node = SubResource("AnimationNodeAdd2_eu7l1")
+nodes/MoveHold/position = Vector2(360, -40)
+nodes/hold/node = SubResource("AnimationNodeAnimation_bcbcq")
+nodes/hold/position = Vector2(40, 280)
+nodes/idle/node = SubResource("AnimationNodeAnimation_js7pq")
+nodes/idle/position = Vector2(-300, -20)
+nodes/output/position = Vector2(760, 0)
+nodes/sprint/node = SubResource("AnimationNodeAnimation_eu7l1")
+nodes/sprint/position = Vector2(340, 280)
+nodes/walk/node = SubResource("AnimationNodeAnimation_p1v5b")
+nodes/walk/position = Vector2(-300, 160)
+node_connections = [&"Dash", 0, &"MoveHold", &"Dash", 1, &"sprint", &"Move", 0, &"idle", &"Move", 1, &"walk", &"MoveHold", 0, &"Move", &"MoveHold", 1, &"hold", &"output", 0, &"Dash"]
+
+[node name="character-male-f2" instance=ExtResource("1_q80ld")]
+
+[node name="Skeleton3D" parent="character-male-f" index="0"]
+bones/4/rotation = Quaternion(0, 0, -0.382683, 0.92388)
+bones/5/rotation = Quaternion(0, 0, 0.382683, 0.92388)
+
+[node name="DashParticles" type="GPUParticles3D" parent="character-male-f/Skeleton3D/body-mesh" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337506, -0.0486615)
+material_override = SubResource("StandardMaterial3D_7iv6w")
+transparency = 0.87
+emitting = false
+amount = 775
+lifetime = 0.9
+speed_scale = 6.6
+explosiveness = 0.05
+randomness = 0.4
+visibility_aabb = AABB(-10, -10, -10, 8, 8, 8)
+trail_lifetime = 0.75
+process_material = SubResource("ParticleProcessMaterial_up6ii")
+draw_pass_1 = SubResource("SphereMesh_ocmwp")
+
+[node name="head-mesh" parent="character-male-f/Skeleton3D" index="1"]
+mesh = ExtResource("2_iq0so")
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" index="0"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeBlendTree_iq0so")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("..")
+parameters/Dash/blend_amount = 0.0
+parameters/Move/blend_amount = 0.0
+parameters/MoveHold/add_amount = 0.0
+
+[node name="ItemPosition" type="Marker3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275045, 0.36202)
