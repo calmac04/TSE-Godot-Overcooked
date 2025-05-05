@@ -2,11 +2,7 @@ extends Camera3D
 
 @export var target_path: NodePath  # Player 1
 @export var target_path2: NodePath  # Player 2
-<<<<<<< Updated upstream
-@export var follow_offset := Vector3(0, 3, 2.5)
-=======
 @export var follow_offset := Vector3(0, 3, -2.5)
->>>>>>> Stashed changes
 @export var follow_smoothness := 5.0
 
 var target1: Node3D

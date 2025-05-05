@@ -11,30 +11,24 @@ config_version=5
 [application]
 
 config/name="Overcooked"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-run/main_scene="res://node_3d.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
-=======
-run/main_scene="uid://dg1k20ycvuled"
-config/features=PackedStringArray("4.4", "Forward Plus")
->>>>>>> Stashed changes
-=======
-run/main_scene="uid://dg1k20ycvuled"
-config/features=PackedStringArray("4.4", "Forward Plus")
->>>>>>> Stashed changes
-=======
-run/main_scene="uid://dg1k20ycvuled"
-config/features=PackedStringArray("4.4", "Forward Plus")
->>>>>>> Stashed changes
-=======
 run/main_scene="uid://bcspd83se28i6"
 config/features=PackedStringArray("4.4", "Forward Plus")
->>>>>>> Stashed changes
 config/icon="res://icon.svg"
+<<<<<<<Updatedupstream<<<<<<<Updatedupstream<<<<<<<Updatedupstream<<<<<<<Updatedupstreamrun/main_scene="res://node_3d.tscn"
 
 [autoload]
 
 Recipes="*res://Scripts/Recipes.gd"
+
+[input]
+
+action={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+interact={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
+]
+}

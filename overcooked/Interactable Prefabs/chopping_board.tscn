@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d7lavp2d1k67"]
 
-[ext_resource type="Script" path="res://Scripts/ChoppingBoard.gd" id="1_rjcl8"]
+[ext_resource type="Script" uid="uid://tlc08up3e1rt" path="res://Scripts/ChoppingBoard.gd" id="1_rjcl8"]
 [ext_resource type="PackedScene" uid="uid://wakb6gyx7usy" path="res://Models/CuttingBoard/CuttingBoard.FBX" id="2_1cxdn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0pvj"]

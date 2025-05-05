@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvk3u0alkdit4"]
 
-[ext_resource type="Script" path="res://Scripts/Ingredient.gd" id="1_hj42u"]
+[ext_resource type="Script" uid="uid://dfwamxojebgsj" path="res://Scripts/Ingredient.gd" id="1_hj42u"]
 [ext_resource type="ArrayMesh" uid="uid://dys5cmvnsmuiw" path="res://Models/Onion/Onion.obj" id="2_et34p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2dxy"]
@@ -12,10 +12,10 @@ albedo_color = Color(1, 0.576471, 0.113725, 1)
 script = ExtResource("1_hj42u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0207036, -0.0452541, -7.00809e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0207036, -0.0452541, -7.00809e-06)
 mesh = ExtResource("2_et34p")
 surface_material_override/0 = SubResource("StandardMaterial3D_o2dxy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.998842, 0, 0, 0, 0.998842, 0, 0, 0, 0.998842, 0.0497768, 0.812099, -0.0031523)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0497768, 0.371158, -0.0031523)
 shape = SubResource("BoxShape3D_24rp2")

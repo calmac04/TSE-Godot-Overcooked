@@ -1,11 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbu74paofw2dq"]
 
-[ext_resource type="Script" path="res://Scripts/Tray.gd" id="1_r7ixd"]
+[ext_resource type="Script" uid="uid://b2mcwws2ju850" path="res://Scripts/Tray.gd" id="1_r7ixd"]
 [ext_resource type="PackedScene" uid="uid://cvk3u0alkdit4" path="res://Interactable Prefabs/Onion.tscn" id="2_bny8r"]
 [ext_resource type="Texture2D" uid="uid://g2eb2qey8bwa" path="res://Models/Onion/Onion.png" id="3_s4i6k"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l2uub"]
-size = Vector3(0.996948, 0.996582, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kux5l"]
 albedo_texture = ExtResource("3_s4i6k")
@@ -16,15 +13,14 @@ albedo_color = Color(1, 0.584314, 0.141176, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_gl6y7"]
 material = SubResource("StandardMaterial3D_ol8rb")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_l2uub"]
+size = Vector3(0.996948, 0.996582, 1)
+
 [node name="OnionTray" type="StaticBody3D" groups=["Interactable", "Tray"]]
 script = ExtResource("1_r7ixd")
 scene_spawn = ExtResource("2_bny8r")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00152588, 0.00170898, 0)
-shape = SubResource("BoxShape3D_l2uub")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_kux5l")
@@ -33,3 +29,7 @@ skeleton = NodePath("../RigidBody3D")
 
 [node name="TrayTop" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575654, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00152588, 0.00170898, 0)
+shape = SubResource("BoxShape3D_l2uub")

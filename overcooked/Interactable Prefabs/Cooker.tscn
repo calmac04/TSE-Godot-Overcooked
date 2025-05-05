@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfu4tqkw88xkt"]
 
 [ext_resource type="PackedScene" uid="uid://ctj76qmyetufn" path="res://Models/Cooker/Cooker.FBX" id="1_ryfpf"]
-[ext_resource type="Script" path="res://Scripts/Cooker.gd" id="2_ahfre"]
+[ext_resource type="Script" uid="uid://dv0l73srk4muv" path="res://Scripts/Cooker.gd" id="2_ahfre"]
 [ext_resource type="PackedScene" uid="uid://0nk1g4ftseqn" path="res://Interactable Prefabs/SaucePan.tscn" id="3_bd6pt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xp04y"]
@@ -16,5 +16,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711893, 0)
 [node name="RigidBody3D" type="RigidBody3D" parent="." index="3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265782, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.265782, 0)
 shape = SubResource("BoxShape3D_xp04y")

@@ -2,32 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream:overcooked/CharacterController/Textures/colormap.png.import
-uid="uid://b0un0rupyjmsp"
-path.s3tc="res://.godot/imported/colormap.png-c790ca64536010782fbdde365732b592.s3tc.ctex"
-=======
-uid="uid://dhperxe8tl01d"
-path.s3tc="res://.godot/imported/Boat_CounterTop_Wood.png-d47903a5d669b7e275e9534be19559b5.s3tc.ctex"
->>>>>>> Stashed changes:overcooked/assets/Chopping Board/Boat_CounterTop_Wood.png.import
+uid="uid://c8hvdeh84ifyk"
+path="res://.godot/imported/colormap.png-c790ca64536010782fbdde365732b592.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://CharacterController/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-c790ca64536010782fbdde365732b592.s3tc.ctex"]
+dest_files=["res://.godot/imported/colormap.png-c790ca64536010782fbdde365732b592.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
