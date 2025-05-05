@@ -1,5 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bqyb1ch1jcxn2"]
 
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://de7nhnwm6ep1f" path="res://Scenes/Player1.tscn" id="1_rbbyh"]
 [ext_resource type="ArrayMesh" uid="uid://dmyu1csrc7vrr" path="res://Meshes/Body_02.mesh" id="2_s5vin"]
 [ext_resource type="ArrayMesh" uid="uid://b888gyw2g73s7" path="res://Meshes/Body_03.mesh" id="3_ohrwp"]
@@ -7,6 +8,15 @@
 [ext_resource type="ArrayMesh" uid="uid://vkraswenndp" path="res://Meshes/Head_03.mesh" id="5_mlr37"]
 [ext_resource type="ArrayMesh" uid="uid://djnfta7vkkdnd" path="res://Meshes/Head_02.mesh" id="6_sqqxy"]
 [ext_resource type="Script" uid="uid://cohgv7rfqtda" path="res://Scripts/camera.gd" id="7_mbrli"]
+=======
+[ext_resource type="PackedScene" uid="uid://de7nhnwm6ep1f" path="res://EVERYTHING/Scenes/Player1.tscn" id="1_rbbyh"]
+[ext_resource type="ArrayMesh" uid="uid://dmyu1csrc7vrr" path="res://EVERYTHING/Meshes/Body_02.mesh" id="2_s5vin"]
+[ext_resource type="ArrayMesh" uid="uid://b888gyw2g73s7" path="res://EVERYTHING/Meshes/Body_03.mesh" id="3_ohrwp"]
+[ext_resource type="ArrayMesh" uid="uid://dsftcjtu3nex4" path="res://EVERYTHING/Meshes/Head_01.mesh" id="4_nf8ku"]
+[ext_resource type="ArrayMesh" uid="uid://vkraswenndp" path="res://EVERYTHING/Meshes/Head_03.mesh" id="5_mlr37"]
+[ext_resource type="ArrayMesh" uid="uid://djnfta7vkkdnd" path="res://EVERYTHING/Meshes/Head_02.mesh" id="6_sqqxy"]
+[ext_resource type="Script" uid="uid://cohgv7rfqtda" path="res://EVERYTHING/Scripts/camera.gd" id="7_mbrli"]
+>>>>>>> Stashed changes
 
 [node name="Node3D" type="Node3D"]
 

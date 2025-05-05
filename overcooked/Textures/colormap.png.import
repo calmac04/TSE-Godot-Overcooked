@@ -2,8 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< Updated upstream:overcooked/Textures/colormap.png.import
 uid="uid://b0un0rupyjmsp"
 path.s3tc="res://.godot/imported/colormap.png-4d3010a0b5f96e5a1a2a5a260bb10630.s3tc.ctex"
+========
+uid="uid://b3yv78546tckn"
+path.s3tc="res://.godot/imported/Knife.png-0924ab1f6a1714127a60f65a845a0c3c.s3tc.ctex"
+>>>>>>>> Stashed changes:overcooked/assets/Chopping Board/Knife.png.import
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true

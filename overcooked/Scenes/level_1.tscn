@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:overcooked/level_1.tscn
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 [gd_scene load_steps=44 format=3 uid="uid://dg1k20ycvuled"]
@@ -40,6 +41,35 @@ sky_material = SubResource("ProceduralSkyMaterial_1pe0h")
 [sub_resource type="Environment" id="Environment_sof0w"]
 background_mode = 2
 sky = SubResource("Sky_27bay")
+=======
+[gd_scene load_steps=45 format=3 uid="uid://dg1k20ycvuled"]
+
+[ext_resource type="Script" uid="uid://ih7viacrr3vv" path="res://Scripts/Recipes.gd" id="1_6r07y"]
+[ext_resource type="PackedScene" uid="uid://hgbiibmfaj5n" path="res://assets/CompleteStation/FoodConveyor.FBX" id="3_6ioyp"]
+[ext_resource type="PackedScene" uid="uid://od4i1wy6veqb" path="res://assets/PlateWarmer/Basic_Cabinet_PlateWarmer.FBX" id="5_8i23i"]
+[ext_resource type="ArrayMesh" uid="uid://w4gvdmmc8jqr" path="res://assets/Washing Station/WashingStation.obj" id="8_yltlr"]
+[ext_resource type="PackedScene" uid="uid://bdeasj0j5vesx" path="res://assets/Basic_Cabinet/Basic_Cabinet_No_Handle.FBX" id="9_6ssoq"]
+[ext_resource type="PackedScene" uid="uid://b11s6757soju4" path="res://assets/Basic_Cabinet/Basic_Cabinet.FBX" id="10_imks0"]
+[ext_resource type="PackedScene" uid="uid://de7nhnwm6ep1f" path="res://Scenes/Player1.tscn" id="11_dlmop"]
+[ext_resource type="Script" uid="uid://cohgv7rfqtda" path="res://Scripts/camera.gd" id="12_sda17"]
+[ext_resource type="PackedScene" uid="uid://b5o47adjfrtuo" path="res://Interactable Prefabs/bin.tscn" id="12_yltlr"]
+[ext_resource type="PackedScene" uid="uid://d7lavp2d1k67" path="res://Interactable Prefabs/chopping_board.tscn" id="13_6ssoq"]
+[ext_resource type="PackedScene" uid="uid://cfu4tqkw88xkt" path="res://Interactable Prefabs/Cooker.tscn" id="14_imks0"]
+[ext_resource type="PackedScene" uid="uid://bfnlb75k572bu" path="res://Interactable Prefabs/fire_extinguisher.tscn" id="15_dlmop"]
+[ext_resource type="PackedScene" uid="uid://0nk1g4ftseqn" path="res://Interactable Prefabs/SaucePan.tscn" id="18_sda17"]
+[ext_resource type="PackedScene" uid="uid://q8e3nennucw6" path="res://Interactable Prefabs/mushroom_tray.tscn" id="19_1fal7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27bay"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_sof0w"]
+sky_material = SubResource("ProceduralSkyMaterial_27bay")
+
+[sub_resource type="Environment" id="Environment_ggavl"]
+background_mode = 2
+sky = SubResource("Sky_sof0w")
+>>>>>>> Stashed changes:overcooked/Scenes/level_1.tscn
 tonemap_mode = 2
 glow_enabled = true
 
@@ -47,11 +77,6 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbsph"]
 albedo_color = Color(0.5828, 0.62, 0.5828, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_syysn"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6op8"]
-albedo_color = Color(0.886275, 0.25098, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gdbtl"]
 
@@ -124,6 +149,14 @@ albedo_color = Color(0.92549, 0.168627, 0.0784314, 1)
 albedo_color = Color(1, 1, 0.713726, 1)
 
 [node name="level" type="Node3D"]
+script = ExtResource("1_6r07y")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ggavl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sof0w")
@@ -140,12 +173,6 @@ transform = Transform3D(6.70519, 0, 0, 0, 10.004, 0, 0, 0, 4.56227, 8.086, 0, 3.
 mesh = SubResource("PlaneMesh_6oc46")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_xbsph")
-
-[node name="counter18" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.089, 0, 7.914)
-mesh = SubResource("BoxMesh_syysn")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_h6op8")
 
 [node name="wall" type="MeshInstance3D" parent="kitchen"]
 transform = Transform3D(0.25, 0, 0, 0, 1.2, 0, 0, 0, 1, 1.51, 0.6, -0.04)
@@ -957,158 +984,141 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6h104")
 
 [node name="assets" type="Node3D" parent="."]
 
-[node name="Bin" parent="assets" instance=ExtResource("1_d2ufs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.382, -0.08, -4.277)
-
-[node name="FireExtinguisher" parent="assets" instance=ExtResource("2_x55ub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.43103, 0.401427, 1.71378)
-
-[node name="FoodConveyor" parent="assets" instance=ExtResource("3_llg68")]
+[node name="FoodConveyor" parent="assets" instance=ExtResource("3_6ioyp")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.53787, -0.08, -3.83427)
 
-[node name="Cooker" parent="assets" instance=ExtResource("4_cwa7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.426, -0.08, 2.61139)
-
-[node name="plate_warmer" parent="assets" instance=ExtResource("5_xcv1j")]
+[node name="plate_warmer" parent="assets" instance=ExtResource("5_8i23i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.538, -0.08, -2.361)
-
-[node name="CookPot" parent="assets" instance=ExtResource("6_x0vrc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4314, 0.464148, 2.60317)
-
-[node name="CuttingBoard" parent="assets" instance=ExtResource("7_vbxh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46368, 0.4227, -5.34848)
-
-[node name="CuttingBoard2" parent="assets" instance=ExtResource("7_vbxh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.492789, 0.4227, -5.34848)
 
 [node name="WashingStation" type="MeshInstance3D" parent="assets"]
 transform = Transform3D(-3.71547e-08, 0, 0.85, 0, 1, 0, -0.85, 0, -3.71547e-08, -9.32018, -0.08, -0.845084)
-mesh = ExtResource("8_y07nj")
+mesh = ExtResource("8_yltlr")
 skeleton = NodePath("../../kitchen")
 
-[node name="corner_cabinet" parent="assets" instance=ExtResource("9_idr4s")]
+[node name="corner_cabinet" parent="assets" instance=ExtResource("9_6ssoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.413, -0.08, -5.34)
 
-[node name="corner_cabinet2" parent="assets" instance=ExtResource("9_idr4s")]
+[node name="corner_cabinet2" parent="assets" instance=ExtResource("9_6ssoq")]
 transform = Transform3D(1.13294, 0, 0, 0, 1, 0, 0, 0, 1, 2.49749, -0.08, -5.34)
 
-[node name="corner_cabinet3" parent="assets" instance=ExtResource("9_idr4s")]
+[node name="corner_cabinet3" parent="assets" instance=ExtResource("9_6ssoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.538, -0.08, 2.594)
 
-[node name="corner_cabinet4" parent="assets" instance=ExtResource("9_idr4s")]
+[node name="corner_cabinet4" parent="assets" instance=ExtResource("9_6ssoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.40422, -0.08, 2.60675)
 
-[node name="cabinet" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.42308, -0.08, -5.338)
 
-[node name="cabinet2" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet2" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4433, -0.08, -5.338)
 
-[node name="cabinet3" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet3" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.46, -0.08, -5.338)
 
-[node name="cabinet4" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet4" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47296, -0.08, -5.338)
 
-[node name="cabinet5" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet5" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.46838, -0.08, -5.338)
 
-[node name="cabinet6" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet6" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.47487, -0.08, -5.338)
 
-[node name="cabinet7" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet7" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47904, -0.08, -5.338)
 
-[node name="cabinet8" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet8" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48393, -0.08, -5.338)
 
-[node name="cabinet9" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet9" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.509087, -0.08, -5.338)
 
-[node name="cabinet10" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet10" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.473454, -0.08, -5.338)
 
-[node name="cabinet11" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet11" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46426, -0.08, -5.338)
 
-[node name="cabinet12" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet12" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.538, -0.08, -1.36529)
 
-[node name="cabinet13" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet13" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.538, -0.08, -0.369264)
 
-[node name="cabinet14" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet14" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.538, -0.08, 0.620755)
 
-[node name="cabinet15" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet15" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.538, -0.08, 1.60589)
 
-[node name="cabinet16" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet16" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.54782, -0.08, 2.62258)
 
-[node name="cabinet29" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet29" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.54782, -0.08, -1.38603)
 
-[node name="cabinet30" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet30" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.564865, -0.08, -1.38603)
 
-[node name="cabinet31" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet31" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.425752, -0.08, -1.38603)
 
-[node name="cabinet32" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet32" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.4183, -0.08, -1.38603)
 
-[node name="cabinet33" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet33" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.40601, -0.08, -1.38603)
 
-[node name="cabinet34" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet34" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.3894, -0.08, -1.38603)
 
-[node name="cabinet35" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet35" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.37035, -0.08, -1.38603)
 
-[node name="cabinet36" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet36" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.35784, -0.08, -1.38603)
 
-[node name="cabinet37" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet37" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.35028, -0.08, -1.38603)
 
-[node name="cabinet17" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet17" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.550768, -0.08, 2.62258)
 
-[node name="cabinet18" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet18" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.46526, -0.08, 2.62258)
 
-[node name="cabinet19" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet19" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.46399, -0.08, 2.62258)
 
-[node name="cabinet20" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet20" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.45883, -0.08, 2.62258)
 
-[node name="cabinet21" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet21" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.44284, -0.08, 2.62258)
 
-[node name="cabinet22" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet22" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.42399, -0.08, 2.62258)
 
-[node name="cabinet23" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet23" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.41653, -0.08, 2.62258)
 
-[node name="cabinet24" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet24" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.4071, -0.08, 2.62258)
 
-[node name="cabinet25" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet25" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.4107, -0.08, 1.6306)
 
-[node name="cabinet26" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet26" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.4107, -0.08, 0.675173)
 
-[node name="cabinet27" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet27" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.4107, -0.08, -2.3555)
 
-[node name="cabinet28" parent="assets" instance=ExtResource("10_3mud0")]
+[node name="cabinet28" parent="assets" instance=ExtResource("10_imks0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.4107, -0.08, -3.2287)
 
+<<<<<<< Updated upstream:overcooked/level_1.tscn
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 [node name="Node3D" parent="." instance=ExtResource("11_1pe0h")]
@@ -1130,3 +1140,33 @@ follow_offset = Vector3(0, 3, -2.5)
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+[node name="Bin2" parent="assets" instance=ExtResource("12_yltlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.42951, 0, -4.2972)
+
+[node name="ChoppingBoard" parent="assets" instance=ExtResource("13_6ssoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45252, 0, -5.38228)
+
+[node name="ChoppingBoard2" parent="assets" instance=ExtResource("13_6ssoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.531976, 0.0773959, -5.38848)
+
+[node name="Cooker2" parent="assets" instance=ExtResource("14_imks0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43025, 0, 2.5477)
+
+[node name="FireExtinguisher2" parent="assets" instance=ExtResource("15_dlmop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.51222, 0.403625, 1.6772)
+
+[node name="Player 1" parent="." instance=ExtResource("11_dlmop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07155, -4.76837e-07, -3.30546)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("12_sda17")
+target_path = NodePath("../Player 1")
+target_path2 = NodePath("../Player 1")
+
+[node name="CookPot" parent="." instance=ExtResource("18_sda17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45229, 0.503828, 2.64139)
+
+[node name="TomatoTray" parent="." instance=ExtResource("19_1fal7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.471204, 0, 2.65644)
+>>>>>>> Stashed changes:overcooked/Scenes/level_1.tscn

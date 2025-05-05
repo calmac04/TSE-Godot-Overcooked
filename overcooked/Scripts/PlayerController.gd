@@ -94,7 +94,11 @@ var player2Contr = 1
 # --------------------- MOVEMENT ---------------------
 @export_category("Physics")
 @export_subgroup("PlayerVariables")
+<<<<<<< Updated upstream
 @export var speed := 3.0
+=======
+@export var speed := -3.0
+>>>>>>> Stashed changes
 @export var dashSpeed := 10.0
 @export var dashDuration := 0.15
 @export var dashCooldown := 0.5
@@ -303,7 +307,10 @@ func pickupObject():
 	rayParams.to = to
 	rayParams.exclude = [self]
 	rayParams.collision_mask = 0b1
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 	var result = get_world_3d().direct_space_state.intersect_ray(rayParams)
 	if result and result.collider is RigidBody3D:
 		isHolding = true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://oxlsl4qkkkni"]
+
+[ext_resource type="PackedScene" uid="uid://bfgpartrxotew" path="res://Models/Basic_Cabinet/Basic_Cabinet.FBX" id="1_owu1m"]
+[ext_resource type="Script" path="res://Scripts/WorkStation.gd" id="2_1idg7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jv0ck"]
+size = Vector3(1, 0.558594, 1.06348)
+
+[node name="Basic_Cabinet" groups=["Interactable", "WorkStation"] instance=ExtResource("1_owu1m")]
+script = ExtResource("2_1idg7")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.281118, 0.0317383)
+shape = SubResource("BoxShape3D_jv0ck")
+
+[node name="CounterTop" type="Marker3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.636351, 0)

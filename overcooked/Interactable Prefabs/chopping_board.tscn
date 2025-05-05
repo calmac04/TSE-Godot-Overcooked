@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://d7lavp2d1k67"]
+
+[ext_resource type="Script" path="res://Scripts/ChoppingBoard.gd" id="1_rjcl8"]
+[ext_resource type="PackedScene" uid="uid://wakb6gyx7usy" path="res://Models/CuttingBoard/CuttingBoard.FBX" id="2_1cxdn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0pvj"]
+albedo_color = Color(0.402732, 0.137306, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_us83r"]
+material = SubResource("StandardMaterial3D_d0pvj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mb83c"]
+
+[node name="ChoppingBoard" type="StaticBody3D" groups=["ChoppingBoard", "Interactable"]]
+disable_mode = 1
+script = ExtResource("1_rjcl8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00135, 0, 0, 0, 1.00135, 0, 0, 0, 1.00135, 0, 0, 0)
+mesh = SubResource("BoxMesh_us83r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_mb83c")
+
+[node name="CuttingBoard" parent="." instance=ExtResource("2_1cxdn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.495115, 0)
+
+[node name="CounterTop" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00176001, 0.613618, -0.00940382)

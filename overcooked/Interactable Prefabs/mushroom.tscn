@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx30iv1icjlwc"]
+
+[ext_resource type="Script" path="res://Scripts/Ingredient.gd" id="1_72nqp"]
+[ext_resource type="ArrayMesh" uid="uid://dil5pyjhbvfd0" path="res://Models/Mushroom/Mushroom.obj" id="2_twuyj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nugbi"]
+size = Vector3(1.27481, 1.16608, 1.0376)
+
+[node name="Mushroom" type="RigidBody3D" groups=["Food", "Interactable", "Pickupable"]]
+script = ExtResource("1_72nqp")
+foodType = "mushroom"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+mesh = ExtResource("2_twuyj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0174713, -0.0410676, 0.13208)
+shape = SubResource("BoxShape3D_nugbi")
