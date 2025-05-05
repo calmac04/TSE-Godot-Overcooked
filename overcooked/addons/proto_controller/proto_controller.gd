@@ -4,7 +4,6 @@
 # Happy prototyping!
 
 extends CharacterBody3D
-
 ## Can we move around?
 @export var can_move : bool = true
 ## Are we affected by gravity?
@@ -43,15 +42,30 @@ extends CharacterBody3D
 @export var input_sprint : String = "sprint"
 ## Name of Input Action to toggle freefly mode.
 @export var input_freefly : String = "freefly"
+##Name of Input Action to interact with other objects (pick up and place)
+@export var input_interact = "interact"
+##Name of Input Action to use action commands (such as chop or fire extinguisher)
+@export var input_action = "action"
+##Distance the player can interact with
+@export var interact_distance : float = 2.0
 
+##How many seconds does the player need to hold down an action
+@export var required_chop_time: float = 1.0
+@export var required_putout_time: float = 1.0
+
+var current_target : Node = null
 var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
+var held_object : Node = null
+var is_interacting: bool = false
+var interact_hold_time: float = 0.0
 
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
+@onready var hold_position = $holdPosition
 
 func _ready() -> void:
 	check_input_mappings()
@@ -75,6 +89,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			enable_freefly()
 		else:
 			disable_freefly()
+	
+	#Interact with the closest target
+	if Input.is_action_just_pressed(input_interact):
+		if current_target:
+			interact_with(current_target)
+	
+
 
 func _physics_process(delta: float) -> void:
 	# If freeflying, handle freefly and nothing else
@@ -117,8 +138,223 @@ func _physics_process(delta: float) -> void:
 	
 	# Use velocity to actually move
 	move_and_slide()
+	
+	#Finds the closest interactable object and adds it to current target
+	find_closest_interactable()
+	
+	#Hold time will increase if player holding interact
+	#Hold time will increase if player holding interact
+	if Input.is_action_pressed(input_action):
+		if current_target and current_target.is_in_group("ChoppingBoard"):
+			is_interacting = true
+			interact_hold_time += delta
+		
+			if interact_hold_time >= required_chop_time:
+				current_target.chop_food()
+				interact_hold_time = 0.0
+				is_interacting = false
+				
+		elif held_object and current_target and held_object.is_in_group("FireExtinguisher"):
+			is_interacting = true
+			interact_hold_time += delta
+			
+			if interact_hold_time >= required_putout_time:
+				if current_target.is_in_group("Saucepan"):
+					current_target.put_out_fire()
+				if current_target.has_method("get_item"):
+					var item = current_target.get_item()
+					if item and item.is_in_group("Saucepan"):
+						item.put_out_fire()
+			
+	else:
+		interact_hold_time = 0.0
 
+## Will get us the closest interactable object based on interact distance
+func find_closest_interactable():
+	var min_distance = interact_distance
+	current_target = null
+	
+	for obj in get_tree().get_nodes_in_group("Interactable"):
+		if not obj is Node3D or (obj == held_object):
+			continue
+		
+		##For every interactable object, will get distance between player and objects position
+		var distance = global_transform.origin.distance_to(obj.global_transform.origin)
+		if distance < min_distance:
+			min_distance = distance
+			current_target = obj
 
+##Allows player to interact with objects based on their group
+func interact_with(target: Node):
+	if held_object:
+		place_object(target)
+		return
+	else:
+		if target.is_in_group("ChoppingBoard"):
+			var item: Node = target.get_item()
+			if item:
+				target.remove_item()
+				pickup_object(item)
+		elif target.is_in_group("Cooker") or target.is_in_group("WorkStation"):
+			var item: Node = target.get_item()
+			if item:
+				target.remove_item()
+				pickup_object(item)
+		elif target.is_in_group("Tray"):
+			var item: Node = target.get_item()
+			if item:
+				target.remove_item()
+				pickup_object(item)
+			else:
+				item = target.spawn_item()
+				if item:
+					get_tree().current_scene.add_child(item)
+					pickup_object(item)
+			
+		else:
+			print("Picking up" + target.name)
+			pickup_object(target)
+
+		
+		
+
+##Function to picks up target object
+func pickup_object(obj: Node):
+	if not obj.is_in_group("Pickupable"):
+		print ("Can't pickup this object!")
+		return
+	
+	held_object = obj
+		
+	obj.get_parent().remove_child(obj)
+	hold_position.add_child(obj)
+	obj.transform = Transform3D.IDENTITY #Will reset rotation/position relative to hold position
+	obj.linear_velocity = Vector3.ZERO
+	obj.angular_velocity = Vector3.ZERO
+	var rb = obj as RigidBody3D
+	rb.freeze = true
+	var collision = obj.get_node("CollisionShape3D")
+	collision.disabled = true
+	print("Picked up" + obj.name)
+
+##Function to place object (in a saucepan, sink, etc..)
+func place_object(target: Node):
+	var rb = held_object as RigidBody3D
+	rb.freeze = true
+	var collision = held_object.get_node("CollisionShape3D")
+	collision.disabled = true
+	
+	#What type of object is the target?
+	if target.is_in_group("Saucepan"):
+		place_in_saucepan(target)
+	elif target.is_in_group("ChoppingBoard") or target.is_in_group("WorkStation"):
+		place_on_board(target)
+	elif target.is_in_group("Cooker"):
+		place_on_cooker(target)
+	elif target.is_in_group("Plate"):
+		place_on_plate(target)
+	elif target.is_in_group("Tray"):
+		place_on_tray(target)
+	elif target.is_in_group("Bin"):
+		place_in_bin(target)
+	else:
+		print(target.name + " cannot be interacted with")
+	
+func place_in_saucepan(sauce_pan: Node):
+	##Chekcs to see that the thing you try to put in the saucepan is food and is chopped
+	if held_object.is_in_group("Plate"):
+		var item: Node = held_object.get_item()
+		if (item) and item.has_method("is_chopped") and item.is_chopped():
+			if sauce_pan.add_food(item.foodType):
+				held_object.remove_item()
+				item.queue_free()
+				item = null
+				print("item removed from plate")
+		if not held_object.is_full() and not sauce_pan.is_burnt():
+			item = sauce_pan.return_food()
+			if (item):
+				held_object.place_item(item)
+				sauce_pan.remove_item()
+				
+	elif held_object.has_method("is_chopped") and held_object.is_chopped():
+		if sauce_pan.add_food(held_object.foodType):
+			held_object.queue_free()
+			held_object = null
+	else:
+		print("Can't put into saucepan")
+	
+
+func place_on_board(board: Node):
+	#If board isn't full, place object on board. 
+	if not board.is_full():
+		if held_object:
+			held_object.get_parent().remove_child(held_object)
+			board.place_item(held_object)
+			held_object = null
+		else:
+			board.return_item()
+	#If it is full, check to see whether you can place item inside whatever is on board (e.g. plate, pan)
+	else:
+		var item: Node
+		item = board.get_item()
+		if item.is_in_group("Saucepan"):
+			place_in_saucepan(item)
+		elif item.is_in_group("Plate"):
+			place_on_plate(item)
+
+func place_on_cooker(cooker: Node):
+	if not cooker.is_full():
+		if held_object:
+			held_object.get_parent().remove_child(held_object)
+			cooker.place_item(held_object)
+			held_object = null
+		else:
+			cooker.return_item()
+	else:
+		var item: Node
+		item = cooker.get_item()
+		if item.is_in_group("Saucepan"):
+			place_in_saucepan(item)
+		elif item.is_in_group("Plate"):
+			place_on_plate(item)
+			
+			
+func place_on_plate(plate: Node):
+	if not plate.is_full():
+		if held_object.is_in_group("Food"):
+			held_object.get_parent().remove_child(held_object)
+			plate.place_item(held_object)
+			held_object = null
+	else:
+		print("Plate is full")
+
+func place_on_tray(tray: Node):
+	if not tray.is_full():
+		if held_object:
+			held_object.get_parent().remove_child(held_object)
+			tray.place_item(held_object)
+			held_object = null
+		else:
+			held_object = tray.get_item()
+			tray.remove_item()
+	else:
+		var item: Node = tray.get_item()
+		if item.is_in_group("Saucepan"):
+			place_in_saucepan(item)
+		elif item.is_in_group("Plate"):
+			place_on_plate(item)
+			
+func place_in_bin(bin: Node):
+	if held_object.is_in_group("Plate") or held_object.is_in_group("Saucepan"):
+		held_object.remove_item()
+	else:
+		held_object.queue_free()
+		held_object = null
+
+		
+		
+		
+		
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). Head rotates around x (up/down).
 ## Modifies look_rotation based on rot_input, then resets basis and rotates by look_rotation.
