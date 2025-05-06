@@ -257,6 +257,9 @@ func place_object(target: Node):
 		place_on_tray(target)
 	elif target.is_in_group("Bin"):
 		place_in_bin(target)
+	elif target.is_in_group("FoodConveyor"):
+		if (target.place_item(held_object)):
+			held_object = null
 	else:
 		print(target.name + " cannot be interacted with")
 	

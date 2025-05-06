@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://m2lsexma7k2s"]
+[gd_scene load_steps=5 format=3 uid="uid://m2lsexma7k2s"]
+
+[ext_resource type="Script" path="res://Scripts/Ingredient.gd" id="1_4374n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctuom"]
 albedo_color = Color(0.38, 0, 0, 1)
@@ -11,6 +13,9 @@ height = 0.0249171
 radius = 0.120352
 
 [node name="TomatoSoup" type="RigidBody3D" groups=["Food"]]
+transform = Transform3D(2.22129, 0, 0, 0, 1, 0, 0, 0, 2.10647, 0, 0, 0)
+script = ExtResource("1_4374n")
+foodType = "tomato_soup"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.233526, 0, 0, 0, 0.0101691, 0, 0, 0, 0.237639, 0, 0.157037, 0)

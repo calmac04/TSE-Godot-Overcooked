@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3c0q80l6cwqm"]
+[gd_scene load_steps=17 format=3 uid="uid://d3c0q80l6cwqm"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://0nk1g4ftseqn" path="res://Interactable Prefabs/SaucePan.tscn" id="4_exatj"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bvtel3nfmotlp" path="res://Interactable Prefabs/plate.tscn" id="7_nrlab"]
 [ext_resource type="PackedScene" uid="uid://b5o47adjfrtuo" path="res://Interactable Prefabs/bin.tscn" id="10_g1b1u"]
 [ext_resource type="PackedScene" uid="uid://bfnlb75k572bu" path="res://Interactable Prefabs/fire_extinguisher.tscn" id="11_s2fnk"]
+[ext_resource type="PackedScene" uid="uid://76lb2seja3pu" path="res://Interactable Prefabs/food_conveyor.tscn" id="12_655wn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qqb4h"]
 
@@ -93,3 +94,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
 [node name="Basic_Cabinet8" parent="." instance=ExtResource("6_kr353")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
 scene_spawn = ExtResource("11_s2fnk")
+
+[node name="FoodConveyor" parent="." instance=ExtResource("12_655wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0)
