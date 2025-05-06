@@ -1,9 +1,10 @@
-[gd_scene load_steps=94 format=3 uid="uid://dg1k20ycvuled"]
+[gd_scene load_steps=95 format=3 uid="uid://dg1k20ycvuled"]
 
-[ext_resource type="PackedScene" uid="uid://hgbiibmfaj5n" path="res://assets/CompleteStation/FoodConveyor.FBX" id="3_llg68"]
+[ext_resource type="Script" uid="uid://dpq3d466c448e" path="res://Scenes/level.gd" id="1_oovug"]
 [ext_resource type="PackedScene" uid="uid://od4i1wy6veqb" path="res://assets/PlateWarmer/Basic_Cabinet_PlateWarmer.FBX" id="5_xcv1j"]
 [ext_resource type="PackedScene" uid="uid://de7nhnwm6ep1f" path="res://Scenes/Player1.tscn" id="6_6r07y"]
 [ext_resource type="PackedScene" uid="uid://oxlsl4qkkkni" path="res://Interactable Prefabs/work_station.tscn" id="6_oovug"]
+[ext_resource type="PackedScene" uid="uid://cf3rpuqkukm5" path="res://Interactable Prefabs/food_conveyor.tscn" id="7_oovug"]
 [ext_resource type="ArrayMesh" uid="uid://w4gvdmmc8jqr" path="res://assets/Washing Station/WashingStation.obj" id="8_y07nj"]
 [ext_resource type="PackedScene" uid="uid://bdeasj0j5vesx" path="res://assets/Basic_Cabinet/Basic_Cabinet_No_Handle.FBX" id="9_idr4s"]
 [ext_resource type="PackedScene" uid="uid://b11s6757soju4" path="res://assets/Basic_Cabinet/Basic_Cabinet.FBX" id="10_3mud0"]
@@ -251,6 +252,7 @@ albedo_color = Color(0.92549, 0.168627, 0.0784314, 1)
 albedo_color = Color(1, 1, 0.713726, 1)
 
 [node name="level" type="Node3D"]
+script = ExtResource("1_oovug")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8i23i")
@@ -1323,9 +1325,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6h104")
 
 [node name="assets" type="Node3D" parent="."]
 
-[node name="FoodConveyor" parent="assets" instance=ExtResource("3_llg68")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.53787, -0.08, -3.83427)
-
 [node name="plate_warmer" parent="assets" instance=ExtResource("5_xcv1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.538, -0.08, -2.361)
 
@@ -1588,3 +1587,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.448959, 2.69873, -2.14999)
 script = ExtResource("14_6ioyp")
 target_path = NodePath("../Player 1")
 target_path2 = NodePath("../Player 1")
+
+[node name="FoodConveyor2" parent="." instance=ExtResource("7_oovug")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.52567, -0.0978316, -3.8464)

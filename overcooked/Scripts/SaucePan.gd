@@ -90,6 +90,8 @@ func _on_cooking_timer_timeout():
 				finished_product = mushroom_soup_scene.instantiate()
 	if finished_product:
 		clear_soup_visual()
+		var rg: Node = finished_product as RigidBody3D
+		rg.freeze = true
 		tomato_visualiser.add_child(finished_product)
 		
 func _on_burning_timer_timeout():

@@ -29,5 +29,7 @@ func get_item():
 	return item_copy
 	
 func remove_item():
+	if on_plate:
+		on_plate.queue_free()
 	on_plate = null
 	

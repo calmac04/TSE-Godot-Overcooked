@@ -17,5 +17,5 @@ mesh = ExtResource("2_et34p")
 surface_material_override/0 = SubResource("StandardMaterial3D_o2dxy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0497768, 0.371158, -0.0031523)
+transform = Transform3D(0.998842, 0, 0, 0, 0.998842, 0, 0, 0, 0.998842, 0.0497768, 0.812099, -0.0031523)
 shape = SubResource("BoxShape3D_24rp2")

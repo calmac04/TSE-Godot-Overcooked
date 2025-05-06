@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://0nk1g4ftseqn"]
 
-[ext_resource type="Script" uid="uid://dbn2q7kalm60p" path="res://Scripts/SaucePan.gd" id="2_3xo18"]
+[ext_resource type="Script" path="res://Scripts/SaucePan.gd" id="2_3xo18"]
 [ext_resource type="PackedScene" uid="uid://m2lsexma7k2s" path="res://Interactable Prefabs/TomatoSoup.tscn" id="2_5wuq1"]
 [ext_resource type="PackedScene" uid="uid://bxocxy1bchd54" path="res://Interactable Prefabs/OnionSoup.tscn" id="3_1uyia"]
 [ext_resource type="PackedScene" uid="uid://603oardrsgl" path="res://Interactable Prefabs/MushroomSoup.tscn" id="4_pyxy8"]
@@ -51,7 +51,7 @@ length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p6ngt"]
 _data = {
-&"Unreal Take": SubResource("Animation_kanxa")
+"Unreal Take": SubResource("Animation_kanxa")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6vr5"]
@@ -65,6 +65,7 @@ distance_fade_mode = 1
 material = SubResource("StandardMaterial3D_fnqsb")
 
 [node name="CookPot" type="RigidBody3D" groups=["Interactable", "Pickupable", "Saucepan"]]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 script = ExtResource("2_3xo18")
 tomato_soup_scene = ExtResource("2_5wuq1")
 onion_soup_scene = ExtResource("3_1uyia")
@@ -77,7 +78,7 @@ skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_p6ngt")
+"": SubResource("AnimationLibrary_p6ngt")
 }
 
 [node name="CookingTimer" type="Timer" parent="."]

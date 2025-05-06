@@ -226,12 +226,7 @@ func _physics_process(delta):
 
 	# Controller Input
 	var controller = get_player_controller()
-	inputVector = Vector3(
-		_apply_dead_zone(Input.get_joy_axis(controller, 0)),
-		0,
-		_apply_dead_zone(Input.get_joy_axis(controller, 1))
-	).normalized()
-	
+	inputVector = Vector3(_apply_dead_zone(Input.get_joy_axis(controller, 0)),0,_apply_dead_zone(Input.get_joy_axis(controller, 1))).normalized()
 	#Change Mesh
 	var current_time = Time.get_ticks_msec() / 1000.0
 	if current_time - last_mesh_cycle_time >= mesh_cycle_cooldown:    
@@ -391,6 +386,9 @@ func place_object(target: Node):
 		place_on_tray(target)
 	elif target.is_in_group("Bin"):
 		place_in_bin(target)
+	elif target.is_in_group("FoodConveyor"):
+		if (target.place_item(held_object)):
+			held_object = null
 	else:
 		print(target.name + " cannot be interacted with")
 	
@@ -522,6 +520,7 @@ func UpdateTree():
 
 # --------------------- DASH PARTICLES ---------------------
 func emitParticles(dashDirection: Vector3):
+	dashDirection = dashDirection.inverse()
 	if dashDirection.length() < 0.1:
 		dashDirection = -global_transform.basis.z
 

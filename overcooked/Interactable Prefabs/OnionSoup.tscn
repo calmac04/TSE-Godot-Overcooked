@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxocxy1bchd54"]
+[gd_scene load_steps=5 format=3 uid="uid://bxocxy1bchd54"]
+
+[ext_resource type="Script" path="res://Scripts/Ingredient.gd" id="1_il3jq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctuom"]
 albedo_color = Color(0.43, 0.214427, 0.0258, 1)
@@ -11,9 +13,12 @@ height = 0.0558113
 radius = 0.140748
 
 [node name="OnionSoup" type="RigidBody3D" groups=["Food"]]
+transform = Transform3D(0.947082, 0, 0, 0, 1, 0, 0, 0, 1.08861, 0, 0, 0)
+script = ExtResource("1_il3jq")
+foodType = "onion_soup"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.268398, 0, 0, 0, 0.0184259, 0, 0, 0, 0.280595, 0, 0.157037, 0)
+transform = Transform3D(0.268398, 0, 0, 0, 0.0184259, 0, 0, 0, 0.284355, 0, 0.157037, 0)
 mesh = SubResource("CylinderMesh_ugkas")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
