@@ -2,7 +2,14 @@ extends Node
 
 var on_conveyor: Node = null
 var item_deleted: bool = false
+var plate_warmer: Node = null
 
+func _ready():
+	#Get the waste baskets in the scene
+	var pw_group = get_tree().get_nodes_in_group("PlateWarmer")
+	if pw_group.size() > 0:
+		plate_warmer = pw_group[0]
+		
 #Bool value to let player know to set held_object to NULL if remove_item() is called
 func place_item(item: Node) -> bool:
 	item_deleted = false
@@ -46,4 +53,6 @@ func remove_item():
 		item_deleted = true
 		on_conveyor.queue_free()
 		on_conveyor = null
+		if plate_warmer:
+			plate_warmer.add_plate()
 	

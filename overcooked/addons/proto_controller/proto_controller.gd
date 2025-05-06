@@ -210,6 +210,10 @@ func interact_with(target: Node):
 				if item:
 					get_tree().current_scene.add_child(item)
 					pickup_object(item)
+		elif target.is_in_group("PlateWarmer"):
+			var item: Node = target.remove_plate()
+			if item:
+				pickup_object(item)
 			
 		else:
 			print("Picking up" + target.name)
@@ -225,8 +229,9 @@ func pickup_object(obj: Node):
 		return
 	
 	held_object = obj
-		
-	obj.get_parent().remove_child(obj)
+	
+	if obj.get_parent():
+		obj.get_parent().remove_child(obj)
 	hold_position.add_child(obj)
 	obj.transform = Transform3D.IDENTITY #Will reset rotation/position relative to hold position
 	obj.linear_velocity = Vector3.ZERO

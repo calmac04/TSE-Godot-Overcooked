@@ -10,7 +10,7 @@ material = SubResource("StandardMaterial3D_ctuom")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_02rrh"]
 height = 0.0950328
-radius = 0.210769
+radius = 0.143077
 
 [node name="MushroomSoup" type="RigidBody3D" groups=["Food"]]
 transform = Transform3D(1.55086, 0, 0, 0, 1, 0, 0, 0, 1.53689, 0, 0, 0)
@@ -18,9 +18,9 @@ script = ExtResource("1_phr6u")
 foodType = "mushroom_soup"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.419612, 0, 0, 0, 0.0511375, 0, 0, 0, 0.395012, 0, 0.157037, 0)
+transform = Transform3D(0.292158, 0, 0, 0, 0.0511375, 0, 0, 0, 0.272615, 0, 0.157037, 0)
 mesh = SubResource("CylinderMesh_ugkas")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000911668, 0.162316, 0.00268271)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000911668, 0.162316, 0.000214331)
 shape = SubResource("CylinderShape3D_02rrh")

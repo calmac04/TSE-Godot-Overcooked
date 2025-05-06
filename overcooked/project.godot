@@ -29,6 +29,8 @@ Tray=""
 Bin=""
 FireExtinguisher=""
 FoodConveyor=""
+WasteBasket=""
+PlateWarmer=""
 
 [input]
 

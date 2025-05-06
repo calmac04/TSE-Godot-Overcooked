@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3c0q80l6cwqm"]
+[gd_scene load_steps=19 format=3 uid="uid://d3c0q80l6cwqm"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://0nk1g4ftseqn" path="res://Interactable Prefabs/SaucePan.tscn" id="4_exatj"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b5o47adjfrtuo" path="res://Interactable Prefabs/bin.tscn" id="10_g1b1u"]
 [ext_resource type="PackedScene" uid="uid://bfnlb75k572bu" path="res://Interactable Prefabs/fire_extinguisher.tscn" id="11_s2fnk"]
 [ext_resource type="PackedScene" uid="uid://76lb2seja3pu" path="res://Interactable Prefabs/food_conveyor.tscn" id="12_655wn"]
+[ext_resource type="PackedScene" uid="uid://dabp20lhgn8s4" path="res://Interactable Prefabs/waste_basket.tscn" id="13_hkier"]
+[ext_resource type="PackedScene" uid="uid://c3khvhg60lt5m" path="res://Interactable Prefabs/plate_warmer.tscn" id="14_yf7ap"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qqb4h"]
 
@@ -81,9 +83,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 7)
 
 [node name="Basic_Cabinet4" parent="." instance=ExtResource("6_kr353")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
+scene_spawn = ExtResource("7_nrlab")
 
 [node name="Basic_Cabinet5" parent="." instance=ExtResource("6_kr353")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+scene_spawn = ExtResource("7_nrlab")
 
 [node name="Basic_Cabinet6" parent="." instance=ExtResource("6_kr353")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
@@ -97,3 +101,9 @@ scene_spawn = ExtResource("11_s2fnk")
 
 [node name="FoodConveyor" parent="." instance=ExtResource("12_655wn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0)
+
+[node name="WasteBasket" parent="." instance=ExtResource("13_hkier")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 0)
+
+[node name="plate_warmer" parent="." instance=ExtResource("14_yf7ap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
