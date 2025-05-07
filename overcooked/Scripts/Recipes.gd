@@ -8,7 +8,7 @@ var score = 0
 var level = 0
 
 func _physics_process(delta):
-	if level == 1:
+	if level == 1 or level == 2 or level == 3:
 		frametime = frametime + 1
 		if frametime > 60:
 			frametime = 0
@@ -18,7 +18,7 @@ func _physics_process(delta):
 				timerval = 0
 				randomtimer = rng.randf_range(15.0, 30.0)
 				#print(randomtimer)
-				var item = ["onionsoup",50]
+				var item = ["onion_soup",50]
 				if recipelist.size() < 5:
 					recipelist.append(item)
 			for n in recipelist:

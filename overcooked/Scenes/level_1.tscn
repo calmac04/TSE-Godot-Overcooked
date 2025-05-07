@@ -1,7 +1,6 @@
-[gd_scene load_steps=95 format=3 uid="uid://dg1k20ycvuled"]
+[gd_scene load_steps=94 format=3 uid="uid://dg1k20ycvuled"]
 
 [ext_resource type="Script" uid="uid://dpq3d466c448e" path="res://Scenes/level.gd" id="1_oovug"]
-[ext_resource type="PackedScene" uid="uid://od4i1wy6veqb" path="res://assets/PlateWarmer/Basic_Cabinet_PlateWarmer.FBX" id="5_xcv1j"]
 [ext_resource type="PackedScene" uid="uid://de7nhnwm6ep1f" path="res://Scenes/Player1.tscn" id="6_6r07y"]
 [ext_resource type="PackedScene" uid="uid://oxlsl4qkkkni" path="res://Interactable Prefabs/work_station.tscn" id="6_oovug"]
 [ext_resource type="PackedScene" uid="uid://cf3rpuqkukm5" path="res://Interactable Prefabs/food_conveyor.tscn" id="7_oovug"]
@@ -11,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cbu74paofw2dq" path="res://Interactable Prefabs/onion_tray.tscn" id="11_oovug"]
 [ext_resource type="PackedScene" uid="uid://b5o47adjfrtuo" path="res://Interactable Prefabs/bin.tscn" id="12_yltlr"]
 [ext_resource type="PackedScene" uid="uid://d7lavp2d1k67" path="res://Interactable Prefabs/chopping_board.tscn" id="13_6ssoq"]
-[ext_resource type="PackedScene" uid="uid://bvtel3nfmotlp" path="res://Interactable Prefabs/plate.tscn" id="13_8i23i"]
 [ext_resource type="Script" uid="uid://cohgv7rfqtda" path="res://Scripts/camera.gd" id="14_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://cfu4tqkw88xkt" path="res://Interactable Prefabs/Cooker.tscn" id="14_imks0"]
+[ext_resource type="PackedScene" uid="uid://doclrbdvx7v15" path="res://Interactable Prefabs/plate_warmer.tscn" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://bfnlb75k572bu" path="res://Interactable Prefabs/fire_extinguisher.tscn" id="15_dlmop"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6ioyp"]
@@ -1325,9 +1324,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6h104")
 
 [node name="assets" type="Node3D" parent="."]
 
-[node name="plate_warmer" parent="assets" instance=ExtResource("5_xcv1j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.538, -0.08, -2.361)
-
 [node name="WashingStation" type="MeshInstance3D" parent="assets"]
 transform = Transform3D(-3.71547e-08, 0, 0.85, 0, 1, 0, -0.85, 0, -3.71547e-08, -9.32018, -0.08, -0.845084)
 mesh = ExtResource("8_y07nj")
@@ -1579,9 +1575,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48789, 0, -5.38098)
 [node name="ChoppingBoard2" parent="." instance=ExtResource("13_6ssoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.497782, 0, -5.3881)
 
-[node name="Plate" parent="." instance=ExtResource("13_8i23i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59966, 0.458675, -2.37127)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.448959, 2.69873, -2.14999)
 script = ExtResource("14_6ioyp")
@@ -1590,3 +1583,14 @@ target_path2 = NodePath("../Player 1")
 
 [node name="FoodConveyor2" parent="." instance=ExtResource("7_oovug")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.52567, -0.0978316, -3.8464)
+disable_mode = 0
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+gravity_scale = 1.0
+
+[node name="plate_warmer" parent="." instance=ExtResource("14_oovug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52426, -0.0978319, -2.36712)

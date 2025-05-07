@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://bvtel3nfmotlp"]
 
-[ext_resource type="Script" path="res://Scripts/Plate.gd" id="2_x5fp7"]
+[ext_resource type="Script" uid="uid://vc8jwl6tllsj" path="res://Scripts/Plate.gd" id="2_x5fp7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6sgft"]
 resource_name = "M_Plate"
@@ -47,7 +47,7 @@ length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o333j"]
 _data = {
-"Unreal Take": SubResource("Animation_0i8xr")
+&"Unreal Take": SubResource("Animation_0i8xr")
 }
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wbc4y"]
@@ -65,7 +65,7 @@ skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_o333j")
+&"": SubResource("AnimationLibrary_o333j")
 }
 
 [node name="PlateTop" type="Marker3D" parent="."]

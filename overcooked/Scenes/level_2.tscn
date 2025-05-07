@@ -1,15 +1,16 @@
-[gd_scene load_steps=57 format=3 uid="uid://cuhlnga3dunwr"]
+[gd_scene load_steps=55 format=3 uid="uid://cuhlnga3dunwr"]
 
 [ext_resource type="ArrayMesh" uid="uid://w4gvdmmc8jqr" path="res://assets/Washing Station/WashingStation.obj" id="1_42uki"]
 [ext_resource type="PackedScene" uid="uid://b11s6757soju4" path="res://assets/Basic_Cabinet/Basic_Cabinet.FBX" id="2_t7v2y"]
-[ext_resource type="PackedScene" uid="uid://od4i1wy6veqb" path="res://assets/PlateWarmer/Basic_Cabinet_PlateWarmer.FBX" id="3_ait6c"]
+[ext_resource type="PackedScene" uid="uid://cfu4tqkw88xkt" path="res://Interactable Prefabs/Cooker.tscn" id="4_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://bdeasj0j5vesx" path="res://assets/Basic_Cabinet/Basic_Cabinet_No_Handle.FBX" id="4_vcilj"]
-[ext_resource type="PackedScene" uid="uid://cc1lbrh2m4ni4" path="res://assets/Extinguisher/FireExtinguisher.FBX" id="5_bl0du"]
-[ext_resource type="PackedScene" uid="uid://1dnmvkngydkk" path="res://assets/Bin/Bin.FBX" id="6_q0ycs"]
-[ext_resource type="PackedScene" uid="uid://hgbiibmfaj5n" path="res://assets/CompleteStation/FoodConveyor.FBX" id="7_hj5x7"]
-[ext_resource type="PackedScene" uid="uid://ca5563wdlguk" path="res://assets/CuttingBoard/CuttingBoard.FBX" id="8_yvrk7"]
-[ext_resource type="PackedScene" uid="uid://kgysxifort0b" path="res://assets/Cooker/Cooker.FBX" id="9_fhuy1"]
-[ext_resource type="PackedScene" uid="uid://dn5y2htfu5th6" path="res://assets/CookPot/CookPot.FBX" id="10_i6dbo"]
+[ext_resource type="PackedScene" uid="uid://b5o47adjfrtuo" path="res://Interactable Prefabs/bin.tscn" id="5_ait6c"]
+[ext_resource type="PackedScene" uid="uid://bfnlb75k572bu" path="res://Interactable Prefabs/fire_extinguisher.tscn" id="6_vcilj"]
+[ext_resource type="PackedScene" uid="uid://cf3rpuqkukm5" path="res://Interactable Prefabs/food_conveyor.tscn" id="7_bl0du"]
+[ext_resource type="PackedScene" uid="uid://doclrbdvx7v15" path="res://Interactable Prefabs/plate_warmer.tscn" id="8_q0ycs"]
+[ext_resource type="PackedScene" uid="uid://cbu74paofw2dq" path="res://Interactable Prefabs/onion_tray.tscn" id="9_hj5x7"]
+[ext_resource type="PackedScene" uid="uid://d7lavp2d1k67" path="res://Interactable Prefabs/chopping_board.tscn" id="10_yvrk7"]
+[ext_resource type="PackedScene" uid="uid://oxlsl4qkkkni" path="res://Interactable Prefabs/work_station.tscn" id="11_fhuy1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_15wb7"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -23,14 +24,6 @@ background_mode = 2
 sky = SubResource("Sky_eoq84")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_cyc4k"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpyit"]
-albedo_color = Color(1, 0.211765, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8yl1"]
-albedo_color = Color(1, 0.211765, 1, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_q3vah"]
 
@@ -156,16 +149,6 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="kitchen" type="Node3D" parent="."]
-
-[node name="foodbox1" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72, 0.5, 2.5)
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_fpyit")
-
-[node name="foodbox2" type="MeshInstance3D" parent="kitchen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72, 0.5, 2.5)
-mesh = SubResource("BoxMesh_cyc4k")
-surface_material_override/0 = SubResource("StandardMaterial3D_o8yl1")
 
 [node name="environment" type="Node3D" parent="."]
 
@@ -404,9 +387,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.72, 
 [node name="Basic_Cabinet19" parent="assets" instance=ExtResource("2_t7v2y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.72, 0, 1.5)
 
-[node name="Basic_Cabinet_PlateWarmer" parent="assets" instance=ExtResource("3_ait6c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72, 0, 0.5)
-
 [node name="Basic_Cabinet21" parent="assets" instance=ExtResource("2_t7v2y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.72, 0, -0.5)
 
@@ -440,35 +420,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.061
 [node name="Basic_Cabinet_No_Handle2" parent="assets" instance=ExtResource("4_vcilj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72, 0, 2.5)
 
-[node name="FireExtinguisher" parent="assets" instance=ExtResource("5_bl0du")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55109, 0.495798, -2.55524)
-
-[node name="Bin" parent="assets" instance=ExtResource("6_q0ycs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79672, 0, -2.4903)
-
-[node name="FoodConveyor" parent="assets" instance=ExtResource("7_hj5x7")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.72, 0, -1)
-
 [node name="Basic_Cabinet20" parent="assets" instance=ExtResource("2_t7v2y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.72, 0, 0.5)
-
-[node name="CuttingBoard" parent="assets" instance=ExtResource("8_yvrk7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0317, 0.521972, 2.48433)
-
-[node name="CuttingBoard2" parent="assets" instance=ExtResource("8_yvrk7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0317, 0.521972, 2.48433)
-
-[node name="Cooker" parent="assets" instance=ExtResource("9_fhuy1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.102, 0, -2.5)
-
-[node name="Cooker2" parent="assets" instance=ExtResource("9_fhuy1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.102, 0, -2.5)
-
-[node name="CookPot" parent="assets" instance=ExtResource("10_i6dbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.111, 0.55, -2.511)
-
-[node name="CookPot2" parent="assets" instance=ExtResource("10_i6dbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0911, 0.55, -2.511)
 
 [node name="background_obj" type="Node3D" parent="."]
 
@@ -1287,3 +1240,99 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u4ump")
 transform = Transform3D(2.39322, 0, 0, 0, 0.113214, -0.306858, 0, 0.0365017, 0.951755, -5.64553, 1.25137, -4.79877)
 mesh = SubResource("BoxMesh_l7b2p")
 surface_material_override/0 = SubResource("StandardMaterial3D_bww2d")
+
+[node name="Cooker" parent="." instance=ExtResource("4_t7v2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.08745, 0, -2.5031)
+
+[node name="Cooker2" parent="." instance=ExtResource("4_t7v2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.11463, 0, -2.49866)
+
+[node name="Bin" parent="." instance=ExtResource("5_ait6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77909, 0, -2.47374)
+
+[node name="FireExtinguisher" parent="." instance=ExtResource("6_vcilj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67986, 0.821898, -2.5768)
+
+[node name="FoodConveyor" parent="." instance=ExtResource("7_bl0du")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.70766, 0, -0.99332)
+
+[node name="plate_warmer" parent="." instance=ExtResource("8_q0ycs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71115, 0, 0.487126)
+
+[node name="OnionTray" parent="." instance=ExtResource("9_hj5x7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.71727, 0, 2.49885)
+
+[node name="OnionTray2" parent="." instance=ExtResource("9_hj5x7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71127, 2.38419e-07, 2.52308)
+
+[node name="ChoppingBoard" parent="." instance=ExtResource("10_yvrk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08015, 0, 2.48431)
+
+[node name="ChoppingBoard2" parent="." instance=ExtResource("10_yvrk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05205, 0, 2.48635)
+
+[node name="Basic_Cabinet" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.05893, 0, -2.51578)
+
+[node name="Basic_Cabinet2" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.11044, 0, -2.54605)
+
+[node name="Basic_Cabinet3" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10833, 0, -2.5172)
+
+[node name="Basic_Cabinet4" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11363, 0, -2.51081)
+
+[node name="Basic_Cabinet5" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13026, 0, -1.49793)
+
+[node name="Basic_Cabinet6" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14252, 0, -0.505656)
+
+[node name="Basic_Cabinet7" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05552, 0, 2.50205)
+
+[node name="Basic_Cabinet8" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08259, 0, 2.52218)
+
+[node name="Basic_Cabinet9" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0496, 0, 2.50415)
+
+[node name="Basic_Cabinet10" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.07877, 0, 2.51807)
+
+[node name="Basic_Cabinet11" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72307, 0, -0.497991)
+
+[node name="Basic_Cabinet12" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72656, 0, 0.448459)
+
+[node name="Basic_Cabinet13" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72632, 0, 1.53216)
+
+[node name="Basic_Cabinet14" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70458, 0, 2.51891)
+
+[node name="Basic_Cabinet15" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71943, 0, 2.5057)
+
+[node name="Basic_Cabinet16" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.66942, 0, 2.49522)
+
+[node name="Basic_Cabinet17" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7055, 0, 2.50484)
+
+[node name="Basic_Cabinet18" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71073, 0, -2.50402)
+
+[node name="Basic_Cabinet19" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72113, 0, -2.50363)
+
+[node name="Basic_Cabinet20" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68781, 0, -2.49269)
+
+[node name="Basic_Cabinet21" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69262, 0, -2.4919)
+
+[node name="Basic_Cabinet22" parent="." instance=ExtResource("11_fhuy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.73275, 0, -2.47987)
