@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn4i40nnvcsxi"]
+
+[ext_resource type="StyleBox" uid="uid://db26m0q71w1n4" path="res://StyleBoxes/RecipieBackground.tres" id="1_h0x6e"]
+[ext_resource type="Script" uid="uid://pmmxn5nuscbl" path="res://Scenes/RecipeTimer.gd" id="2_12agg"]
+[ext_resource type="Texture2D" uid="uid://rf4geyiwne58" path="res://assets/Onion.png" id="3_hxt18"]
+[ext_resource type="StyleBox" uid="uid://b6yxj888h442p" path="res://StyleBoxes/TimerProgressBar.tres" id="4_3kqh8"]
+
+[node name="Onion Recipe" type="Panel" node_paths=PackedStringArray("panel")]
+offset_left = 194.0
+offset_top = -112.0
+offset_right = 341.0
+offset_bottom = -14.0
+theme_override_styles/panel = ExtResource("1_h0x6e")
+script = ExtResource("2_12agg")
+panel = NodePath("ProgressTimer")
+
+[node name="Panel1" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 56.0
+offset_right = 44.0
+offset_bottom = 97.0
+
+[node name="Ingredient1" type="TextureRect" parent="Panel1"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 39.0
+texture = ExtResource("3_hxt18")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 56.0
+offset_right = 94.0
+offset_bottom = 97.0
+
+[node name="Ingredient2" type="TextureRect" parent="Panel2"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 39.0
+texture = ExtResource("3_hxt18")
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 55.0
+offset_right = 143.0
+offset_bottom = 96.0
+
+[node name="Ingredient3" type="TextureRect" parent="Panel3"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_hxt18")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 4.0
+offset_right = 100.0
+offset_bottom = 46.0
+
+[node name="ProgressTimer" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 143.0
+offset_bottom = 54.0
+theme_override_styles/panel = ExtResource("4_3kqh8")

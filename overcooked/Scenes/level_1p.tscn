@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://dg1k20ycvuled"]
+[gd_scene load_steps=98 format=3 uid="uid://b1qyu4rp8dsdg"]
 
 [ext_resource type="Script" uid="uid://dpq3d466c448e" path="res://Scenes/level.gd" id="1_oovug"]
 [ext_resource type="PackedScene" uid="uid://de7nhnwm6ep1f" path="res://Scenes/Player1.tscn" id="6_6r07y"]
@@ -14,9 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cfu4tqkw88xkt" path="res://Interactable Prefabs/Cooker.tscn" id="14_imks0"]
 [ext_resource type="PackedScene" uid="uid://doclrbdvx7v15" path="res://Interactable Prefabs/plate_warmer.tscn" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://bfnlb75k572bu" path="res://Interactable Prefabs/fire_extinguisher.tscn" id="15_dlmop"]
-[ext_resource type="Script" uid="uid://c5i14vwbrifvf" path="res://Scripts/NPC_Pathing.gd" id="15_oovug"]
-[ext_resource type="PackedScene" uid="uid://1espwkkob8e1" path="res://UI/GUI.tscn" id="16_8i23i"]
-[ext_resource type="Script" uid="uid://df47rvn7itahw" path="res://UI/gui_manager.gd" id="17_8yhm2"]
+[ext_resource type="Script" uid="uid://c5i14vwbrifvf" path="res://Scenes/NPC_Pathing.gd" id="15_oovug"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6ioyp"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -269,7 +267,7 @@ _data = {
 }
 point_count = 17
 
-[sub_resource type="Curve3D" id="Curve3D_pjppf"]
+[sub_resource type="Curve3D" id="Curve3D_oovug"]
 bake_interval = 10.0
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.33373, 0, 0.155915, 0, 0, 0, 0, 0, 0, -2.65683, 0, -0.131715, 0, 0, 0, 0, 0, 0, -3.94158, 0, -0.706977, 0, 0, 0, 0, 0, 0, -4.32509, 0, -2.26018, 0, 0, 0, 0, 0, 0, -3.27044, 0, -3.60246, 0, 0, 0, 0, 0, 0, -0.490015, 0, -3.2573, 0, 0, 0, 0, 0, 0, 1.94526, 0, -2.43276, 0, 0, 0, 0, 0, 0, 2.34794, 0, -1.30141, 0, 0, 0, 0, 0, 0, 2.50134, 0, 0.903755, 0, 0, 0, 0, 0, 0, 2.27124, 0, 2.89799, 0, 0, 0, 0, 0, 0, 0.411228, 0, 3.74171, 0, 0, 0, 0, 0, 0, -1.48713, 0, 3.93347, 0, 0, 0, 0, 0, 0, -1.71724, 0, 5.08399, 0, 0, 0, 0, 0, 0, 1.08237, 0, 5.17986, 0, 0, 0, 0, 0, 0, 2.65475, 0, 5.6209, 0, 0, 0, 0, 0, 0, 2.17536, 0, 11.6228, 0, 0, 0, 0, 0, 0, -0.125683, 0, 11.3927, 0, 0, 0, 0, 0, 0, -0.106506, 0, 5.73595, 0, 0, 0, 0, 0, 0, -0.988573, 0, 4.66213, 0, 0, 0, 0, 0, 0, -3.25127, 0, 6.08111, 0, 0, 0, 0, 0, 0, -4.26756, 0, 7.69184, 0, 0, 0, 0, 0, 0, -6.35768, 0, 7.30833, 0, 0, 0, 0, 0, 0, -9.08058, 0, 7.13575, 0, 0, 0, 0, 0, 0, -11.5926, 0, 7.00153, 0, 0, 0, 0, 0, 0, -15.1592, 0, 7.34668, 0, 0, 0, 0, 0, 0, -16.1179, 0, 9.03411, 0, 0, 0, 0, 0, 0, -15.8878, 0, 10.9325, 0, 0, 0, 0, 0, 0, -13.28, 0, 10.7983, 0, 0, 0, 0, 0, 0, -13.1649, 0, 8.17122, 0, 0, 0, 0, 0, 0, -9.15729, 0, 5.96605, 0, 0, 0, 0, 0, 0, -5.70572, 0, 5.88935, 0, 0, 0, 0, 0, 0, -3.5389, 0, 5.87018, 0, 0, 0, 0, 0, 0, -1.88982, 0, 4.56625, 0, 0, 0, 0, 0, 0, -1.52548, 0, 2.74459, 0, 0, 0, 0, 0, 0, 0.296175, 0, 0.194266, 0, 0, 0, 0, 0, 0, -1.35291, 0, 0.175091),
@@ -1608,9 +1606,6 @@ script = ExtResource("14_6ioyp")
 target_path = NodePath("../Player 1")
 target_path2 = NodePath("../Player 1")
 
-[node name="Control" parent="Camera3D" instance=ExtResource("16_8i23i")]
-script = ExtResource("17_8yhm2")
-
 [node name="FoodConveyor2" parent="." instance=ExtResource("7_oovug")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.52567, -0.0978316, -3.8464)
 disable_mode = 0
@@ -1632,7 +1627,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4114, 0, 4.6134)
 curve = SubResource("Curve3D_8i23i")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Path3D"]
-transform = Transform3D(-0.0454081, 0, -0.998966, 0, 1, 0, 0.998966, 0, -0.0454081, 1.33841, 0, 0.02877)
+transform = Transform3D(-0.0454079, 0, -0.998966, 0, 1, 0, 0.998966, 0, -0.0454079, 1.33841, 0, 0.02877)
 script = ExtResource("15_oovug")
 
 [node name="NPCL1" parent="Node3D/Path3D/PathFollow3D" instance=ExtResource("6_6r07y")]
@@ -1644,7 +1639,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25233, 0, 6.44371)
 curve = SubResource("Curve3D_8yhm2")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Path3D2"]
-transform = Transform3D(-0.0647986, 0, 0.997897, 0, 1, 0, -0.997897, 0, -0.0647986, -1.74024, 0, 0.165111)
+transform = Transform3D(-0.0647991, 0, 0.997898, 0, 1, 0, -0.997898, 0, -0.0647991, -1.74024, 0, 0.165111)
 script = ExtResource("15_oovug")
 
 [node name="NPCL1_2" parent="Node3D/Path3D2/PathFollow3D" instance=ExtResource("6_6r07y")]
@@ -1653,10 +1648,10 @@ script = null
 
 [node name="Path3D3" type="Path3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.20706, 0, -1.64908)
-curve = SubResource("Curve3D_pjppf")
+curve = SubResource("Curve3D_oovug")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Path3D3"]
-transform = Transform3D(0.212429, 0, 0.977175, 0, 1, 0, -0.977175, 0, 0.212429, -1.33373, 0, 0.155915)
+transform = Transform3D(0.21243, 0, 0.977176, 0, 1, 0, -0.977176, 0, 0.21243, -1.33373, 0, 0.155915)
 
 [node name="NPCL1_2" parent="Node3D/Path3D3/PathFollow3D" instance=ExtResource("6_6r07y")]
 transform = Transform3D(1, 0, -1.11759e-08, 0, 1, 0, 1.11759e-08, 0, 1, 0.000764847, 0, -0.106325)

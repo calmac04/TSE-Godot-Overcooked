@@ -1,0 +1,384 @@
+[gd_scene load_steps=9 format=3 uid="uid://1espwkkob8e1"]
+
+[ext_resource type="Script" uid="uid://df47rvn7itahw" path="res://Scenes/gui_manager.gd" id="1_46657"]
+[ext_resource type="StyleBox" uid="uid://db26m0q71w1n4" path="res://StyleBoxes/RecipieBackground.tres" id="1_gx5h7"]
+[ext_resource type="Texture2D" uid="uid://4e8ju63bw0bx" path="res://assets/Mushroom.png" id="2_4mau4"]
+[ext_resource type="StyleBox" uid="uid://b0dq6klv5nhso" path="res://StyleBoxes/ProgressBar.tres" id="3_bb1td"]
+[ext_resource type="Texture2D" uid="uid://dyygw0mn7fuf5" path="res://assets/stopwatch.svg" id="4_46657"]
+[ext_resource type="Texture2D" uid="uid://bgtia6lteuww2" path="res://assets/coinBag.svg" id="5_1ne4b"]
+[ext_resource type="Texture2D" uid="uid://ef1lrg0gwwqv" path="res://assets/Tomato.png" id="5_svor7"]
+[ext_resource type="Texture2D" uid="uid://rf4geyiwne58" path="res://assets/Onion.png" id="6_o5tpl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -324.0
+offset_right = 577.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GUIManager" type="Control" parent="." node_paths=PackedStringArray("recipe_panels")]
+anchors_preset = 0
+offset_left = -75.0
+offset_top = 14.0
+offset_right = -35.0
+offset_bottom = 54.0
+script = ExtResource("1_46657")
+recipe_panels = [NodePath("../Mushroom Recipe"), NodePath("../Tomato Recpie"), NodePath("../Onion Recipe")]
+
+[node name="RecipeLocs" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RecipeLoc1" type="Container" parent="RecipeLocs"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 72.0
+offset_bottom = 40.0
+
+[node name="RecipeLoc2" type="Container" parent="RecipeLocs"]
+layout_mode = 0
+offset_left = 189.0
+offset_right = 229.0
+offset_bottom = 40.0
+
+[node name="RecipeLoc3" type="Container" parent="RecipeLocs"]
+layout_mode = 0
+offset_left = 343.0
+offset_right = 383.0
+offset_bottom = 40.0
+
+[node name="RecipeLoc4" type="Container" parent="RecipeLocs"]
+layout_mode = 0
+offset_left = 497.0
+offset_right = 537.0
+offset_bottom = 40.0
+
+[node name="RecipeLoc5" type="Container" parent="RecipeLocs"]
+layout_mode = 0
+offset_left = 654.0
+offset_right = 694.0
+offset_bottom = 40.0
+
+[node name="RecipeLoc6" type="Container" parent="RecipeLocs"]
+layout_mode = 0
+offset_left = 811.0
+offset_right = 851.0
+offset_bottom = 40.0
+
+[node name="RecipeLoc7" type="Container" parent="RecipeLocs"]
+layout_mode = 0
+offset_left = 968.0
+offset_right = 1008.0
+offset_bottom = 40.0
+
+[node name="Mushroom Recipe" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -112.0
+offset_right = 179.0
+offset_bottom = -14.0
+theme_override_styles/panel = ExtResource("1_gx5h7")
+
+[node name="Panel1" type="Panel" parent="Mushroom Recipe"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 56.0
+offset_right = 44.0
+offset_bottom = 97.0
+
+[node name="Ingredient1" type="TextureRect" parent="Mushroom Recipe/Panel1"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 39.0
+texture = ExtResource("2_4mau4")
+
+[node name="Panel2" type="Panel" parent="Mushroom Recipe"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 56.0
+offset_right = 94.0
+offset_bottom = 97.0
+
+[node name="Ingredient2" type="TextureRect" parent="Mushroom Recipe/Panel2"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 39.0
+texture = ExtResource("2_4mau4")
+
+[node name="Panel3" type="Panel" parent="Mushroom Recipe"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 55.0
+offset_right = 143.0
+offset_bottom = 96.0
+
+[node name="Ingredient3" type="TextureRect" parent="Mushroom Recipe/Panel3"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_4mau4")
+
+[node name="Panel" type="Panel" parent="Mushroom Recipe"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 4.0
+offset_right = 100.0
+offset_bottom = 46.0
+
+[node name="Panel4" type="Panel" parent="Mushroom Recipe"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 143.0
+offset_bottom = 54.0
+
+[node name="Panel5" type="Panel" parent="Mushroom Recipe/Panel4"]
+layout_mode = 0
+offset_right = 139.0
+offset_bottom = 6.0
+theme_override_styles/panel = ExtResource("3_bb1td")
+
+[node name="Tomato Recpie" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 189.0
+offset_top = -112.0
+offset_right = 336.0
+offset_bottom = -14.0
+theme_override_styles/panel = ExtResource("1_gx5h7")
+
+[node name="Panel1" type="Panel" parent="Tomato Recpie"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 56.0
+offset_right = 44.0
+offset_bottom = 97.0
+
+[node name="Ingredient1" type="TextureRect" parent="Tomato Recpie/Panel1"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 39.0
+texture = ExtResource("5_svor7")
+
+[node name="Panel2" type="Panel" parent="Tomato Recpie"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 56.0
+offset_right = 94.0
+offset_bottom = 97.0
+
+[node name="Ingredient2" type="TextureRect" parent="Tomato Recpie/Panel2"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 39.0
+texture = ExtResource("5_svor7")
+
+[node name="Panel3" type="Panel" parent="Tomato Recpie"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 55.0
+offset_right = 143.0
+offset_bottom = 96.0
+
+[node name="Ingredient3" type="TextureRect" parent="Tomato Recpie/Panel3"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_svor7")
+
+[node name="Panel" type="Panel" parent="Tomato Recpie"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 4.0
+offset_right = 100.0
+offset_bottom = 46.0
+
+[node name="Panel4" type="Panel" parent="Tomato Recpie"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 143.0
+offset_bottom = 54.0
+
+[node name="Panel5" type="Panel" parent="Tomato Recpie/Panel4"]
+layout_mode = 0
+offset_right = 139.0
+offset_bottom = 6.0
+theme_override_styles/panel = ExtResource("3_bb1td")
+
+[node name="Onion Recipe" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 343.0
+offset_top = -112.0
+offset_right = 490.0
+offset_bottom = -14.0
+theme_override_styles/panel = ExtResource("1_gx5h7")
+
+[node name="Panel1" type="Panel" parent="Onion Recipe"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 56.0
+offset_right = 44.0
+offset_bottom = 97.0
+
+[node name="Ingredient1" type="TextureRect" parent="Onion Recipe/Panel1"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 39.0
+texture = ExtResource("6_o5tpl")
+
+[node name="Panel2" type="Panel" parent="Onion Recipe"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 56.0
+offset_right = 94.0
+offset_bottom = 97.0
+
+[node name="Ingredient2" type="TextureRect" parent="Onion Recipe/Panel2"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 39.0
+texture = ExtResource("6_o5tpl")
+
+[node name="Panel3" type="Panel" parent="Onion Recipe"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 55.0
+offset_right = 143.0
+offset_bottom = 96.0
+
+[node name="Ingredient3" type="TextureRect" parent="Onion Recipe/Panel3"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_o5tpl")
+
+[node name="Panel" type="Panel" parent="Onion Recipe"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 4.0
+offset_right = 100.0
+offset_bottom = 46.0
+
+[node name="Panel4" type="Panel" parent="Onion Recipe"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 143.0
+offset_bottom = 54.0
+
+[node name="Panel5" type="Panel" parent="Onion Recipe/Panel4"]
+layout_mode = 0
+offset_right = 139.0
+offset_bottom = 6.0
+theme_override_styles/panel = ExtResource("3_bb1td")
+
+[node name="TimeElement" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -137.0
+offset_right = 126.0
+offset_bottom = -18.0
+grow_vertical = 0
+
+[node name="Stopwatch" type="Sprite2D" parent="TimeElement"]
+position = Vector2(56, 60)
+scale = Vector2(0.21875, 0.21875)
+texture = ExtResource("4_46657")
+
+[node name="TimeText" type="RichTextLabel" parent="TimeElement"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 36.0
+offset_right = 100.0
+offset_bottom = 108.0
+theme_override_font_sizes/normal_font_size = 30
+text = "000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyElement" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -137.0
+offset_right = -14.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CoinBag" type="Sprite2D" parent="MoneyElement"]
+position = Vector2(60, 55.9375)
+scale = Vector2(0.214722, 0.222412)
+texture = ExtResource("5_1ne4b")
+
+[node name="CoinText" type="RichTextLabel" parent="MoneyElement"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 30.0
+offset_right = 111.0
+offset_bottom = 115.0
+theme_override_font_sizes/normal_font_size = 30
+text = "000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
